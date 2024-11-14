@@ -1,3 +1,5 @@
+import API_KEY from "./config";
+
 const main = document.getElementById("main-content");
 
 document.addEventListener("DOMContentLoaded", async function() {
@@ -27,7 +29,7 @@ document.addEventListener("DOMContentLoaded", async function() {
 });
 
 async function getNews() {
-    const response = await fetch("https://newsapi.org/v2/top-headlines?country=us&apiKey=5d7948c8c05147fa93f81a0b8d9222c3");
+    const response = await fetch(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY}`);
     
     // Check if response is OK (status 200-299)
     if (!response.ok) {
